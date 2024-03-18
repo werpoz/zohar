@@ -1,0 +1,6 @@
+.eslintrc.js
+dist/
+coverage/
+build/
+node_modules/
+tsconfig.*

@@ -1,0 +1,17 @@
+services:
+      cli:
+        build:
+            context: ./../.
+            dockerfile: ./.docker/app/Dockerfile
+            target: cli
+        volumes:
+            - ./../:/app
+            - ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}:ro
+        working_dir: /app
+        networks:
+            - ${NETWORKS}
+        env_file:
+            - ./.env
+networks:
+    zohar-network:
+      driver: bridge

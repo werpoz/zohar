@@ -1,0 +1,22 @@
+$schema: 'https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json'
+version: '0.2'
+language:
+    - 'en'
+languageId:
+    - 'typescript'
+globRoot: '../'
+files:
+    - 'src/**/*.ts'
+    - 'README.md'
+useGitignore: true
+gitignoreRoot: '../'
+dictionaries:
+    - 'project-terms'
+    - 'stack-terms'
+dictionaryDefinitions:
+    -
+        name: 'project-terms'
+        path: './project-terms.txt'
+    -
+        name: 'stack-terms'
+        path: './stack-terms.txt'
