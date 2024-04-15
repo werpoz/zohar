@@ -4,6 +4,8 @@ LABEL com.sqd.maintainer='Abel Seminario Leon <e3corpion@gmail.com>'
 
 WORKDIR /app
 
+COPY package.json package-lock.json /app/
+
 RUN \
     apk add git \
     && apk add vim 
@@ -29,4 +31,4 @@ RUN \
     #markdownlint
     markdownlint-cli@^0.32.2
 
-FROM base as http
+FROM base as http-debug 

@@ -1,0 +1,21 @@
+services:
+      http-debug:
+        build:
+            context: ./../.
+            dockerfile: ./.docker/app/Dockerfile
+            target: http-debug
+        volumes:
+            - ./../:/app
+            - ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}:ro
+        working_dir: /app
+        networks:
+            - ${NETWORKS}
+        env_file:
+            - ./.env
+        ports:
+            - 3000:3000
+            - 9229:9229
+        command: sh -c "npm install && npm run build && npm run start:debug"
+networks:
+    zohar-network:
+      driver: bridge
